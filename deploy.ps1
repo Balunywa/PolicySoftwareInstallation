@@ -1,11 +1,11 @@
 $params = @{
-    resourceGroupName     = "SoftwareInstallation" # <-- Change this value for the Resource Group Name
-    storageAccountName    = "strsi01a" # <-- Change this value - must be globally unique
-    location              = "australiasoutheast" # <-- Change this value to a location you want
-    automationAccountName = "siaa01" # <-- Change this value for the Automation Account Name
+    resourceGroupName     = "onemscrowdstrike" # <-- Change this value for the Resource Group Name
+    storageAccountName    = "onemscrowdstrike" # <-- Change this value - must be globally unique
+    location              = "eastus" # <-- Change this value to a location you want
+    automationAccountName = "onemscrowdstrike" # <-- Change this value for the Automation Account Name
 }
 
-New-AzResourceGroup -Name $params.resourceGroupName -Location 'australiasoutheast' -Force
+New-AzResourceGroup -Name $params.resourceGroupName -Location 'eastus' -Force
 
 Write-Host "Deploying Infrastructure" -ForegroundColor Green
 New-AzResourceGroupDeployment -ResourceGroupName $params.resourceGroupName -TemplateFile .\deploy.bicep -TemplateParameterObject $params -Verbose
